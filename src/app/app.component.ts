@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Task } from './models/task.model';
 
@@ -7,7 +8,9 @@ import { Task } from './models/task.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentFocus: string = 'Angular Homework'currentTime = new Date();
+  currentFocus: string = 'Angular Homework';
+  currentTime = new Date();
+
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
@@ -16,20 +19,20 @@ export class AppComponent {
     new Task('Begin brainstorming possible JavaScript group projects', 2),
     new Task('Add README file to last few Angular repos on GitHub', 2)
   ];
-  editTask() {
-    alert("Time to edit a task!");
+  selectedTask = null;
+  finishedEditing() {
+    this.selectedTask = null;
   }
   priorityColor(currentTask){
-    if (currentTask.priority === 3){
+    if(currentTask.priority === 3){
       return "bg-danger";
-    } else if (currentTask.priority === 2) {
-      return  "bg-warning";
-    } else {
+    } else if (currentTask.priority === 2){
+      return "bg-warning";
+    }else {
       return "bg-info";
     }
   }
-}
-export class Task {
-  public done: boolean = false;
-  constructor(public description: string) { }
-}
+  editTask(clickedTask){
+    this.selectedTask = clickedTask;
+  }
+  }

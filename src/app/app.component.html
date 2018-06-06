@@ -1,5 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <h1>Welcome, {{userName}}!</h1>
+
+    <form>
+      <input [(ngModel)]="userName" type="text" name="user">
+    </form>
   <h1>
     To Do List for {{month}}/{{day}}/{{year}}
   </h1>
