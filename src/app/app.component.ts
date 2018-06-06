@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { Task } from './models/task.model';
 
@@ -35,4 +34,4 @@ export class AppComponent {
   editTask(clickedTask){
     this.selectedTask = clickedTask;
   }
-  }
+}
