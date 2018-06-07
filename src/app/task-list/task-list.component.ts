@@ -20,6 +20,12 @@ export class TaskListComponent {
     new Task('Add README file to last few Angular repos on GitHub', 2)
   ];
 
+  filterByCompleteness: string = "incompleteTasks";
+
+  onChange(optionFromMenu) {
+  this.filterByCompleteness = optionFromMenu;
+  }
+
   priorityColor(currentTask){
     if (currentTask.priority === 3){
       return "bg-danger";
@@ -29,4 +35,8 @@ export class TaskListComponent {
       return "bg-info";
     }
   }
+
+  toggleDone(clickedTask: Task, setCompleteness: boolean) {
+     clickedTask.done = setCompleteness;
+   }
 }
