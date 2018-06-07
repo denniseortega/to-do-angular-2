@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule }  from '@angular/forms';
 import { TaskListComponent } from './task-list/task-list.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 
 
@@ -11,7 +13,9 @@ import { TaskListComponent } from './task-list/task-list.component';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    TaskListComponent
+    TaskListComponent,
+    EditTaskComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,
